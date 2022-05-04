@@ -20,4 +20,8 @@ export class TurboNumber {
     this.number *= multiplier;
     return this;
   }
+  power() {
+    this.number = Math.pow(this.number, 2);
+    return this;
+  }
 }
