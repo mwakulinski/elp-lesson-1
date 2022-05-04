@@ -1,7 +1,12 @@
 import { number } from "./index";
 
-describe("number", function () {
-  it("works", () => {
-    expect(number).toBe(5);
+describe("turboNumber tests", function () {
+  class TurboNumber {
+    constructor(private readonly number: number) {}
+  }
+
+  it("should initiate an class instance", () => {
+    const turboNumber = new TurboNumber(1);
+    expect(turboNumber).toBeTruthy;
   });
 });
