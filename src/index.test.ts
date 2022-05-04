@@ -12,6 +12,9 @@ describe("turboNumber tests", function () {
     subtract(numberToSubtract: number) {
       this.number -= numberToSubtract;
     }
+    divide(divider: number) {
+      this.number /= divider;
+    }
   }
 
   it("should initiate an class instance", () => {
@@ -34,5 +37,11 @@ describe("turboNumber tests", function () {
     const turboNumber = new TurboNumber(1);
     turboNumber.subtract(4);
     expect(turboNumber.result()).toBe(-3);
+  });
+
+  it("should correctly divide numbers", () => {
+    const turboNumber = new TurboNumber(1);
+    turboNumber.divide(2);
+    expect(turboNumber.result()).toBe(0.5);
   });
 });
