@@ -17,18 +17,15 @@ describe("turboNumber tests", function () {
   });
 
   it("should correctly sum numbers", () => {
-    turboNumber.add(4);
-    expect(turboNumber.result()).toBe(5);
+    expect(turboNumber.add(4).result()).toBe(5);
   });
 
   it("should correctly subtract numbers", () => {
-    turboNumber.subtract(4);
-    expect(turboNumber.result()).toBe(-3);
+    expect(turboNumber.subtract(4).result()).toBe(-3);
   });
 
   it("should correctly divide numbers", () => {
-    turboNumber.divide(2);
-    expect(turboNumber.result()).toBe(0.5);
+    expect(turboNumber.divide(2).result()).toBe(0.5);
   });
 
   it("should throw error when divided by 0", () => {
