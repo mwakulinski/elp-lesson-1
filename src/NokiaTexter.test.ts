@@ -1,8 +1,11 @@
 class NokiaTexter {
   constructor(private readonly text: string) {}
   squeeze(): string {
-    const squeezedText = this.text
-      .trim()
+    const trimmedText = this.text.trim();
+
+    if (!trimmedText.includes(" ")) return trimmedText;
+
+    const squeezedText = trimmedText
       .split(" ")
       .filter((word) => {
         return word !== "";
@@ -23,8 +26,8 @@ describe("NokiaTexter Test", () => {
     expect(new NokiaTexter("Hi it should work")).toBeDefined();
   });
 
-  it("should return the same text when text has no white spaces", () => {
-    expect(new NokiaTexter("Jaksiemasz").squeeze()).toBe("Jaksiemasz");
+  it("should return the same text when no spaces in text", () => {
+    expect(new NokiaTexter(" Jaksiemasz ").squeeze()).toBe("Jaksiemasz");
   });
 
   it("should join words and camelcase text by words", () => {
