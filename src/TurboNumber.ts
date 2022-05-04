@@ -25,6 +25,7 @@ export class TurboNumber {
     return this;
   }
   square() {
+    if (this.number < 0) throw new Error("You can not square numbers below 0");
     this.number = Math.sqrt(this.number);
     return this;
   }

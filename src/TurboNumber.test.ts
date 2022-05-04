@@ -46,4 +46,10 @@ describe("turboNumber tests", function () {
   it("should correctly square given number", () => {
     expect(turboNumber.power().square().result()).toBe(5);
   });
+
+  it("should trow error when number to square is below 0", () => {
+    expect(() => new TurboNumber(-10).square()).toThrow(
+      "You can not square numbers below 0"
+    );
+  });
 });
