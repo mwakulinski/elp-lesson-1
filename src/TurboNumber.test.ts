@@ -1,4 +1,3 @@
-import { number } from "./index";
 import { TurboNumber } from "./TurboNumber";
 
 let turboNumber: TurboNumber;
