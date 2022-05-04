@@ -35,4 +35,8 @@ describe("turboNumber tests", function () {
   it("should allow method chaining", () => {
     expect(turboNumber.subtract(5).divide(-1).result()).toBe(4);
   });
+
+  it("should correctly multiply numbers", () => {
+    expect(turboNumber.multiply(8).result()).toBe(8);
+  });
 });

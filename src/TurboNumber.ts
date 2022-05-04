@@ -16,4 +16,8 @@ export class TurboNumber {
     this.number /= divider;
     return this;
   }
+  multiply(multiplier: number) {
+    this.number *= multiplier;
+    return this;
+  }
 }
