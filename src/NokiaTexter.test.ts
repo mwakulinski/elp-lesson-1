@@ -2,7 +2,11 @@ class NokiaTexter {
   constructor(private readonly text: string) {}
   squeeze(): string {
     return this.text
+      .trim()
       .split(" ")
+      .filter((word) => {
+        return word !== "";
+      })
       .map((word, index) => {
         return index % 2 === 0 ? word.toUpperCase() : word.toLowerCase();
       })
@@ -21,5 +25,9 @@ describe("NokiaTexter Test", () => {
 
   it("should join words and camelcase text by words", () => {
     expect(new NokiaTexter("Jak sie masz").squeeze()).toBe("JAKsieMASZ");
+  });
+
+  it("should work with any doubled white spaces and white spaces before or after text", () => {
+    expect(new NokiaTexter(" Jak  sie   masz  ").squeeze()).toBe("JAKsieMASZ");
   });
 });
