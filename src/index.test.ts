@@ -43,4 +43,8 @@ describe("turboNumber tests", function () {
   it("should correctly power given number", () => {
     expect(turboNumber.power().result()).toBe(25);
   });
+
+  it("should correctly square given number", () => {
+    expect(turboNumber.power().square().result()).toBe(5);
+  });
 });

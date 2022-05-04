@@ -24,4 +24,8 @@ export class TurboNumber {
     this.number = Math.pow(this.number, 2);
     return this;
   }
+  square() {
+    this.number = Math.sqrt(this.number);
+    return this;
+  }
 }
