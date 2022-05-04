@@ -13,6 +13,7 @@ describe("turboNumber tests", function () {
       this.number -= numberToSubtract;
     }
     divide(divider: number) {
+      if (divider === 0) throw new Error("You can not divide by 0");
       this.number /= divider;
     }
   }
@@ -43,5 +44,10 @@ describe("turboNumber tests", function () {
     const turboNumber = new TurboNumber(1);
     turboNumber.divide(2);
     expect(turboNumber.result()).toBe(0.5);
+  });
+
+  it("should throw error when divided by 0", () => {
+    const turboNumber = new TurboNumber(1);
+    expect(() => turboNumber.divide(0)).toThrow("You can not divide by 0");
   });
 });
